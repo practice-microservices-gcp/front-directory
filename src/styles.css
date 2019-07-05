@@ -1,1 +1,10 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+  --primary-color: lightblue;
+  --secundary-color: black;
+  --font-color: white;
+  --font-small-size: 16px;
+  --font-medium-size: 24px;
+  --font-big-size: 36px;
+  --font-weight-not-important: 500;
+  --font-weight-important: 700;
+}

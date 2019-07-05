@@ -1,0 +1,44 @@
+.ardi-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.row {
+  border: 2px solid black;
+  font-size: var(--font-small-size, 8px);
+  font-weight: var(--font-weight-not-important);
+}
+
+.row.header {
+  background-color: var(--primary-color);
+  font-size: var(--font-medium-size);
+  font-weight: var(--font-weight-important);
+  color: var(--font-color);
+}
+
+.row.unpair {
+  background-color: lightgray;
+}
+
+.cell.footer {
+  text-align: center;
+}
+
+.cell {
+  height: 20px;
+  text-align: left;
+}
+
+.btn {
+  height: 30px;
+  width: 100px;
+  margin: 5px 20px;
+  border-radius: 5px;
+  background-color: var(--primary-color);
+  font-size: var(--font-small-size);
+  font-weight: var(--font-weight-important);
+}
+
+.btn.size {
+  background-color: var(--font-color);
+}
