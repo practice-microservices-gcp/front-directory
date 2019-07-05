@@ -1,40 +1,26 @@
 <table class="ardi-table">
   <thead>
     <tr class="row header">
-      <th class="cell header">Name</th>
-      <th class="cell header">Surname</th>
-      <th class="cell header">Email</th>
+      <th *ngFor="let column of config" class="cell header">{{column.title}}</th>
     </tr>
   </thead>
   <tbody>
-    <tr class="row body unpair">
-      <td class="cell body">Juan</td>
-      <td class="cell body">Martinez</td>
-      <td class="cell body">juan.martinez@mail.com</td>
-    </tr>
-    <tr class="row body pair">
-      <td class="cell body">Pablo</td>
-      <td class="cell body">Hernandez</td>
-      <td class="cell body">pablo.hernandez@mail.com</td>
-    </tr>
-    <tr class="row body unpair">
-      <td class="cell body">Maria</td>
-      <td class="cell body">Gonzalez</td>
-      <td class="cell body">maira.gonzalez@mail.com</td>
+    <tr *ngFor="let item of tableData; index as i" [ngClass]="{'unpair': (i % 2) > 0, 'pair': (i % 2) === 0}" class="row body">
+      <td *ngFor="let column of config" (click)="clickOnRow(item)" class="cell body">{{item[column.name]}}</td>
     </tr>
   </tbody>
   <tfoot>
     <tr class="row footer">
       <td class="cell footer" colspan="3">
-        <button class="btn first">First</button>
-        <button class="btn prev">Previous</button>
-        <select class="btn size">
+        <button (click)="clickOnFirstBtn()" class="btn first">First</button>
+        <button (click)="clickOnPrevBtn()" class="btn prev">Previous</button>
+        <select class="btn size" (change)="changeSizePage($event.target.value)">
           <option selected value="5">5</option>
           <option value="10">10</option>
           <option value="20">20</option>
         </select>
-        <button class="btn next">Next</button>
-        <button class="btn last">Last</button>
+        <button (click)="clickOnNextPage()" class="btn next">Next</button>
+        <button (click)="clickOnLastPage()" class="btn last">Last</button>
       </td>
     </tr>
   </tfoot>

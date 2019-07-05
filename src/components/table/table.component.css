@@ -7,6 +7,17 @@
   border: 2px solid black;
   font-size: var(--font-small-size, 8px);
   font-weight: var(--font-weight-not-important);
+  cursor: pointer;
+}
+
+.row.pair:hover {
+  background-color: var(--primary-color);
+  color: var(--font-color);
+}
+
+.row.unpair:hover {
+  background-color: var(--primary-color);
+  color: var(--font-color);
 }
 
 .row.header {
