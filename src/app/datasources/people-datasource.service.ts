@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 
+import { from, Observable } from 'rxjs';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -52,58 +54,72 @@ export class PeopleDataSourceService {
     email: 'enrique.sanz@email.com'
   },{
     id: 9,
-    name: 'Enrique',
-    surname: 'Sanz',
-    email: 'enrique.sanz@email.com'
+    name: 'Jose Maria',
+    surname: 'Rajoy',
+    email: 'josem.rajoy.sanz@email.com'
   },{
     id: 10,
-    name: 'Enrique',
-    surname: 'Sanz',
-    email: 'enrique.sanz@email.com'
+    name: 'Mariano',
+    surname: 'Aznar',
+    email: 'mariano.aznar@email.com'
   },{
     id: 11,
-    name: 'Enrique',
-    surname: 'Sanz',
-    email: 'enrique.sanz@email.com'
+    name: 'Meritxell',
+    surname: 'Oreja',
+    email: 'meri.oreja@email.com'
   },{
     id: 12,
-    name: 'Enrique',
-    surname: 'Sanz',
-    email: 'enrique.sanz@email.com'
+    name: 'Mayor',
+    surname: 'Batet',
+    email: 'mayor.batet@email.com'
   },{
     id: 13,
-    name: 'Enrique',
-    surname: 'Sanz',
-    email: 'enrique.sanz@email.com'
+    name: 'Felipe',
+    surname: 'Fraga',
+    email: 'felipe.fraga@email.com'
   },{
     id: 14,
-    name: 'Enrique',
-    surname: 'Sanz',
-    email: 'enrique.sanz@email.com'
+    name: 'Manuel',
+    surname: 'Gonzalez',
+    email: 'manuel.gonzalez@email.com'
   },{
     id: 15,
-    name: 'Enrique',
-    surname: 'Sanz',
-    email: 'enrique.sanz@email.com'
+    name: 'Julio',
+    surname: 'Guerra',
+    email: 'julio.guerra@email.com'
   },{
     id: 16,
-    name: 'Enrique',
-    surname: 'Sanz',
-    email: 'enrique.sanz@email.com'
+    name: 'Alfonso',
+    surname: 'Anguita',
+    email: 'alfonso.anguita@email.com'
   },{
     id: 17,
-    name: 'Enrique',
-    surname: 'Sanz',
-    email: 'enrique.sanz@email.com'
+    name: 'Celia',
+    surname: 'Aguirre',
+    email: 'celia.aguirre@email.com'
   },{
     id: 18,
-    name: 'Enrique',
-    surname: 'Sanz',
-    email: 'enrique.sanz@email.com'
+    name: 'Esperanza',
+    surname: 'Villalobos',
+    email: 'esperanza.villalobos@email.com'
   },{
     id: 19,
-    name: 'Enrique',
-    surname: 'Sanz',
-    email: 'enrique.sanz@email.com'
+    name: 'Jorge',
+    surname: 'Alarcon',
+    email: 'jorge.alarcon@email.com'
   }];
+
+  private observableAnswer(data: any): Observable<any> {
+    return from(new Promise((resolve) => {
+      setTimeout(() => { resolve(data); }, 300);
+    }))
+  }
+
+  public getPerson(id: any): Observable<any> {
+    return this.observableAnswer(this.data.filter(person => person.id === id)[0]);
+  }
+
+  public getPeople(offset: number, limit: number) {
+    return this.observableAnswer(this.data.slice(offset, (offset+limit)));
+  }
 }
