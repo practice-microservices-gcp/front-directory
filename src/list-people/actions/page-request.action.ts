@@ -1,6 +1,7 @@
 import { createAction, props } from '@ngrx/store';
 
+export const pageRequestType = '[list-people] Page request';
 export const pageRequest = createAction(
-  '[list-people] Page request',
+  pageRequestType,
   props<{page: number}>()
 );
