@@ -1,5 +1,14 @@
 <ardi-loading show="true"></ardi-loading>
 <h1>List people container</h1>
 <div class="list-people">
-  <ardi-table-people></ardi-table-people>
+  <ardi-table
+[config]="config"
+[tableData]="tableData"
+(rowClick)="onRowClicked($event)"
+(firstPage)="goFirstPage()"
+(prevPage)="goPreviousPage()"
+(sizeChange)="changeSize($event)"
+(nextPage)="goNextPage()"
+(lastPage)="goLastPage()"
+></ardi-table>
 </div>
