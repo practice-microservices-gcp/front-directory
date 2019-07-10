@@ -5,4 +5,7 @@ import { Component } from '@angular/core';
   templateUrl: './list-people.component.html',
   styleUrls: ['./list-people.component.css']
 })
-export class ListPeopleComponent {}
+export class ListPeopleComponent {
+
+  public loading: boolean = false;
+}
