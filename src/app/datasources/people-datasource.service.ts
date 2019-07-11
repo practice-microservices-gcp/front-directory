@@ -120,6 +120,11 @@ export class PeopleDataSourceService {
   }
 
   public getPeople(offset: number, limit: number) {
-    return this.observableAnswer(this.data.slice(offset, (offset+limit)));
+    const response = {
+      data: this.data.slice(offset, (offset+limit)),
+      offset: offset, 
+      limit: limit
+    }
+    return this.observableAnswer(response);
   }
 }

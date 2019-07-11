@@ -7,6 +7,7 @@ const pageLimitFeature = (state: PeopleState) => ({
   page: state.page,
   limit: state.limit
 });
+const loadingFeature = (state: PeopleState) => state.loading;
 
 
 export const configSelector = createSelector(
@@ -20,4 +21,8 @@ export const dataSelector = createSelector(
 export const pageLimitSelector = createSelector(
   pageLimitFeature,
   (state:{page: number, limit: number}) => state
+);
+export const loadingSelector = createSelector(
+  loadingFeature,
+  (state: boolean) => state
 );

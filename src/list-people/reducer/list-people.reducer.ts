@@ -33,6 +33,7 @@ function onPageSuccess (state: PeopleState, action: peopleActions.PageSuccessAct
     {
       loading: false,
       page: action.page,
+      limit: action.limit,
       data: action.data
     } 
   )
