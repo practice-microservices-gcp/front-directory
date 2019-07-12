@@ -1,10 +1,11 @@
 import { createReducer, on, Action } from '@ngrx/store';
 import * as peopleActions from '../actions';
+import { DataTable, ConfigTable } from '../entities';
 
 export interface PeopleState {
   loading: boolean,
-  config: { title: string, name: string}[],
-  data: {[key: string]: any}[],
+  config: ConfigTable[],
+  data: DataTable[],
   error: Error,
   page: number,
   limit: number

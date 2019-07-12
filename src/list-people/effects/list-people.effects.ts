@@ -9,7 +9,7 @@ import {
   pageSuccess,
   pageError
 } from '../actions';
-import { PeopleRepositoryService } from '../../app/repositories';
+import { PeopleRepositoryService } from '../../repositories';
 
 @Injectable({
   providedIn: 'root'

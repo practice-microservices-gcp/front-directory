@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { PeopleState } from '../reducer';
 import { Store, select } from '@ngrx/store';
 import { Observable } from 'rxjs';
 
-import { configSelector, dataSelector, loadingSelector } from '../selectors';
+import { configSelector, dataSelector, loadingSelector, State } from '../selectors';
 import { pageRequest } from '../actions';
+import { DataTable, ConfigTable } from '../entities';
 @Component({
   selector: 'ardi-list-people',
   templateUrl: './list-people.component.html',
@@ -12,13 +12,13 @@ import { pageRequest } from '../actions';
 })
 export class ListPeopleComponent implements OnInit {
 
-  public loading$: Observable<any> = this.store.pipe(select(loadingSelector));
-  public config$: Observable<{ title: string, name: string}[]> = this.store.pipe(select(configSelector));
-  public tableData$: Observable<{ [key: string]: any }[]> = this.store.pipe(select(dataSelector));
+  public loading$: Observable<boolean> = this.store.pipe(select(loadingSelector));
+  public config$: Observable<ConfigTable[]> = this.store.pipe(select(configSelector));
+  public tableData$: Observable<DataTable[]> = this.store.pipe(select(dataSelector));
   
 
   constructor(
-    private store: Store<PeopleState>
+    private store: Store<State>
   ) {}
 
   ngOnInit() {
