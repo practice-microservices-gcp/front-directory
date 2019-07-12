@@ -124,7 +124,8 @@ export class PeopleDataSourceService {
     const response = {
       data: this.data.slice(offset, (offset+limit)),
       offset: offset, 
-      limit: limit
+      limit: limit,
+      total: this.data.length
     }
     return this.observableAnswer(response);
   }

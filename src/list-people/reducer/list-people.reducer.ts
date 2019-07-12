@@ -6,6 +6,7 @@ export interface PeopleState {
   loading: boolean,
   config: ConfigTable[],
   data: DataTable[],
+  lastPage: number,
   error: Error,
   page: number,
   limit: number
@@ -19,6 +20,7 @@ export const initialState: PeopleState = {
     { title: 'Email', name: 'email' }
   ],
   data: [],
+  lastPage: 0,
   error: null,
   page: 0,
   limit: 5
@@ -35,6 +37,7 @@ function onPageSuccess (state: PeopleState, action: peopleActions.PageSuccessAct
       loading: false,
       page: action.page,
       limit: action.limit,
+      lastPage: action.lastPage,
       data: action.data
     } 
   )

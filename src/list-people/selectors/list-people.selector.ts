@@ -1,6 +1,6 @@
 import { createSelector } from '@ngrx/store';
 import { PeopleState } from '../reducer';
-import { ConfigTable, DataTable, PageLimit } from '../entities';
+import { ConfigTable, DataTable, PaginationParams } from '../entities';
 
 export const FEATURE_LIST_PEOPLE = 'listPeople'
 
@@ -12,7 +12,8 @@ const configFeature = (state: State) => state[FEATURE_LIST_PEOPLE].config;
 const dataFeature = (state: State) => state[FEATURE_LIST_PEOPLE].data;
 const pageLimitFeature = (state: State) => ({
   page: state[FEATURE_LIST_PEOPLE].page,
-  limit: state[FEATURE_LIST_PEOPLE].limit
+  limit: state[FEATURE_LIST_PEOPLE].limit,
+  lastPage: state[FEATURE_LIST_PEOPLE].lastPage
 });
 const loadingFeature = (state: State) => state[FEATURE_LIST_PEOPLE].loading;
 
@@ -27,7 +28,7 @@ export const dataSelector = createSelector(
 );
 export const pageLimitSelector = createSelector(
   pageLimitFeature,
-  (state: PageLimit) => state
+  (state: PaginationParams) => state
 );
 export const loadingSelector = createSelector(
   loadingFeature,
