@@ -1,28 +1,33 @@
 import { createSelector } from '@ngrx/store';
 import { PeopleState } from '../reducer';
+import { ConfigTable, DataTable, PageLimit } from '../entities';
 
 export const FEATURE_LIST_PEOPLE = 'listPeople'
 
-const configFeature = (state: PeopleState) => state[FEATURE_LIST_PEOPLE].config;
-const dataFeature = (state: PeopleState) => state[FEATURE_LIST_PEOPLE].data;
-const pageLimitFeature = (state: PeopleState) => ({
+export interface State {
+  [FEATURE_LIST_PEOPLE]: PeopleState
+}
+
+const configFeature = (state: State) => state[FEATURE_LIST_PEOPLE].config;
+const dataFeature = (state: State) => state[FEATURE_LIST_PEOPLE].data;
+const pageLimitFeature = (state: State) => ({
   page: state[FEATURE_LIST_PEOPLE].page,
   limit: state[FEATURE_LIST_PEOPLE].limit
 });
-const loadingFeature = (state: PeopleState) => state[FEATURE_LIST_PEOPLE].loading;
+const loadingFeature = (state: State) => state[FEATURE_LIST_PEOPLE].loading;
 
 
 export const configSelector = createSelector(
   configFeature,
-  (state: {title: string, name: string}[]) => state
+  (state: ConfigTable[]) => state
 );
 export const dataSelector = createSelector(
   dataFeature,
-  (state: {[key: string]: any}[]) => state
+  (state: DataTable[]) => state
 );
 export const pageLimitSelector = createSelector(
   pageLimitFeature,
-  (state:{page: number, limit: number}) => state
+  (state: PageLimit) => state
 );
 export const loadingSelector = createSelector(
   loadingFeature,

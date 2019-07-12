@@ -1,13 +1,14 @@
 import { Injectable } from '@angular/core';
 
 import { from, Observable } from 'rxjs';
+import { DataTable } from '../list-people';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PeopleDataSourceService {
 
-  private data: {[key:string]: any}[] = [{
+  private data: DataTable[] = [{
     id: 0,
     name: 'Juan',
     surname: 'Palomo',
