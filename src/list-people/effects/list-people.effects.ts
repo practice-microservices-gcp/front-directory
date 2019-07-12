@@ -28,9 +28,11 @@ export class ListPeopleEffects {
         }),
         map((response: any) => {
           const page = Math.ceil(response.offset/response.limit);
+          const lastPage = Math.ceil(response.total/response.limit) - 1;
           const action = pageSuccess({
             page: page,
             limit: response.limit,
+            lastPage: lastPage,
             data: response.data
           });
 
