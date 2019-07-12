@@ -1,18 +1,20 @@
 import { createSelector } from '@ngrx/store';
 import { PeopleState } from '../reducer';
 
-const configFeature = (state: PeopleState) => state.config;
-const dataFeature = (state: PeopleState) => state.data;
+export const FEATURE_LIST_PEOPLE = 'listPeople'
+
+const configFeature = (state: PeopleState) => state[FEATURE_LIST_PEOPLE].config;
+const dataFeature = (state: PeopleState) => state[FEATURE_LIST_PEOPLE].data;
 const pageLimitFeature = (state: PeopleState) => ({
-  page: state.page,
-  limit: state.limit
+  page: state[FEATURE_LIST_PEOPLE].page,
+  limit: state[FEATURE_LIST_PEOPLE].limit
 });
-const loadingFeature = (state: PeopleState) => state.loading;
+const loadingFeature = (state: PeopleState) => state[FEATURE_LIST_PEOPLE].loading;
 
 
 export const configSelector = createSelector(
   configFeature,
-  (state: {[key: string]: string}[]) => state
+  (state: {title: string, name: string}[]) => state
 );
 export const dataSelector = createSelector(
   dataFeature,
