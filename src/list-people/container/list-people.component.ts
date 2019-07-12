@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Store, select } from '@ngrx/store';
 import { Observable } from 'rxjs';
 
@@ -18,7 +19,8 @@ export class ListPeopleComponent implements OnInit {
   
 
   constructor(
-    private store: Store<State>
+    private store: Store<State>,
+    private router: Router
   ) {}
 
   ngOnInit() {
@@ -32,10 +34,7 @@ export class ListPeopleComponent implements OnInit {
   }
 
   public onRowClicked(id: number) {
-    this.onEvent({
-      type:'RowClicked',
-      payload: id
-    });
+    this.router.navigateByUrl('/details');
   }
 
   public goFirstPage() {
