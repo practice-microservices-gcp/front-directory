@@ -1,49 +1,30 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { PeopleState } from '../reducer';
+import { Store, select } from '@ngrx/store';
+import { Observable } from 'rxjs';
 
+import { configSelector, dataSelector, loadingSelector } from '../selectors';
+import { pageRequest } from '../actions';
 @Component({
   selector: 'ardi-list-people',
   templateUrl: './list-people.component.html',
   styleUrls: ['./list-people.component.css']
 })
-export class ListPeopleComponent {
+export class ListPeopleComponent implements OnInit {
 
-  public loading: boolean = false;
-  public config: { title: string, name: string}[];
-  public tableData: { [key: string]: any }[];
+  public loading$: Observable<any> = this.store.pipe(select(loadingSelector));
+  public config$: Observable<{ title: string, name: string}[]> = this.store.pipe(select(configSelector));
+  public tableData$: Observable<{ [key: string]: any }[]> = this.store.pipe(select(dataSelector));
   
-  constructor() {
-    this.config = [
-      { title: 'Name', name: 'name' },
-      { title: 'Surname', name: 'surname' },
-      { title: 'Email', name: 'email' }
-    ];
 
-    this.tableData = [{
-      id: 0,
-      name: 'Juan',
-      surname: 'Palomo',
-      email: 'juan.palomo@email.com'
-    }, {
-      id: 1,
-      name: 'Antonio',
-      surname: 'Marzal',
-      email: 'antonio.marzal@email.com'
-    }, {
-      id: 2,
-      name: 'Maria',
-      surname: 'Guitierrez',
-      email: 'maria.guitierrez@email.com'
-    }, {
-      id: 3,
-      name: 'Pablo',
-      surname: 'Garcia',
-      email: 'pablo.garcia@email.com'
-    }, {
-      id: 4,
-      name: 'Enrique',
-      surname: 'Sanz',
-      email: 'enrique.sanz@email.com'
-    }]
+  constructor(
+    private store: Store<PeopleState>
+  ) {}
+
+  ngOnInit() {
+    const action = pageRequest({page: 0, limit: 5});
+
+    this.store.dispatch(action);
   }
 
   private onEvent(action: { type: string, payload?: any}) {

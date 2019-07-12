@@ -1,9 +1,9 @@
-<ardi-loading show="true"></ardi-loading>
+<ardi-loading show="loading$|async"></ardi-loading>
 <h1>List people container</h1>
 <div class="list-people">
   <ardi-table
-[config]="config"
-[tableData]="tableData"
+[config]="config$|async"
+[tableData]="tableData$|async"
 (rowClick)="onRowClicked($event)"
 (firstPage)="goFirstPage()"
 (prevPage)="goPreviousPage()"

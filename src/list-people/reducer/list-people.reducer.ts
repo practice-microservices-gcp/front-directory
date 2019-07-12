@@ -1,9 +1,9 @@
-import { createReducer, on } from '@ngrx/store';
+import { createReducer, on, Action } from '@ngrx/store';
 import * as peopleActions from '../actions';
 
 export interface PeopleState {
   loading: boolean,
-  config: {[key: string]: string}[],
+  config: { title: string, name: string}[],
   data: {[key: string]: any}[],
   error: Error,
   page: number,
@@ -49,9 +49,13 @@ function onPageError ( state: PeopleState, action: peopleActions.PageErrorAction
   );
 }
 
-export const listPeopleReducer = createReducer(
+const listPeopleReducer = createReducer(
   initialState,
   on(peopleActions.pageRequest, onPageRequest),
   on(peopleActions.pageSuccess, onPageSuccess),
   on(peopleActions.pageError, onPageError)
 );
+
+export function reducer (state: PeopleState | undefined, action: Action) {
+  return listPeopleReducer(state, action);
+}
