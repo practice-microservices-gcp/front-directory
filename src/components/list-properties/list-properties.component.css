@@ -1,0 +1,9 @@
+.properties {
+  font-size: var(--font-small-size);
+}
+
+.title {
+  text-transform: capitalize;
+  font-weight: var(--font-weight-important);
+  margin-right: 3px;
+}

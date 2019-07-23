@@ -1,4 +1,7 @@
 <h1>This is the container for the details</h1>
-<ardi-frame [header]="'header'">
-  <span>This is inside the frame</span>
+<ardi-frame [header]="data.name">
+    <ardi-list-properties
+    [config]="config"
+    [data]="data"
+    ></ardi-list-properties>
 </ardi-frame>
