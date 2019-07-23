@@ -1,0 +1,21 @@
+.frame {
+  min-height: 100px;
+  width: 100%;
+  border: 3px solid var(--primary-color);
+  border-radius: 4px;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  font-size: var(--font-medium-size);
+  font-weight: var(--font-weight-important);
+  width: 100%;
+  border-bottom: 3px solid var(--primary-color);
+}
+
+.body {
+  padding: 5px;
+}
