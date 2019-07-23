@@ -50,7 +50,7 @@ export class ListPeopleComponent implements OnInit, OnDestroy {
   }
 
   public onRowClicked(id: number) {
-    this.router.navigateByUrl('/details');
+    this.router.navigateByUrl(`/details/${id}`);
   }
 
   public goFirstPage() {
