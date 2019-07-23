@@ -1,6 +1,6 @@
 import { createReducer, on, Action } from '@ngrx/store';
 import * as peopleActions from '../actions';
-import { DataTable, ConfigTable } from '../entities';
+import { DataTable, ConfigTable } from '../../components';
 
 export interface PeopleState {
   loading: boolean,

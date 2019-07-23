@@ -1,4 +1,4 @@
 export interface ConfigTable {
   title: string;
-  name: string
+  name: string;
 }

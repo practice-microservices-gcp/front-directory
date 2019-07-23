@@ -1,5 +1,5 @@
 import { createAction, props, Action } from '@ngrx/store';
-import { DataTable } from '../entities';
+import { DataTable } from '../../components';
 
 export interface PageSuccessAction extends Action {
   page: number,

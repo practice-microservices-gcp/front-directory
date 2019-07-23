@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
 import { PeopleDataSourceService } from '../datasources'
-import { DataTable } from '../list-people';
+import { DataTable } from '../components';
 
 
 @Injectable({
