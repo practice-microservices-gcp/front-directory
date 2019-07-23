@@ -5,7 +5,8 @@ import { Observable, Subscription } from 'rxjs';
 
 import { configSelector, dataSelector, loadingSelector, State, pageLimitSelector } from '../selectors';
 import { pageRequest } from '../actions';
-import { DataTable, ConfigTable, PaginationParams } from '../entities';
+import { PaginationParams } from '../entities';
+import { DataTable, ConfigTable } from '../../components';
 @Component({
   selector: 'ardi-list-people',
   templateUrl: './list-people.component.html',

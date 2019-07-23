@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 
 import { from, Observable } from 'rxjs';
-import { DataTable } from '../list-people';
+import { DataTable } from '../components';
 
 @Injectable({
   providedIn: 'root'

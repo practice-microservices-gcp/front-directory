@@ -1,6 +1,7 @@
 import { createSelector } from '@ngrx/store';
 import { PeopleState } from '../reducer';
-import { ConfigTable, DataTable, PaginationParams } from '../entities';
+import { PaginationParams } from '../entities';
+import { ConfigTable, DataTable } from '../../components';
 
 export const FEATURE_LIST_PEOPLE = 'listPeople'
 

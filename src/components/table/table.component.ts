@@ -6,6 +6,9 @@ import {
   ChangeDetectionStrategy
 } from '@angular/core';
 
+import { ConfigTable } from './config.entity';
+import { DataTable } from './data.entity';
+
 @Component({
   selector: 'ardi-table',
   templateUrl: './table.component.html',
@@ -15,10 +18,10 @@ import {
 export class TableComponent {
 
   @Input()
-  public config: {title: string, name: string}[];
+  public config: ConfigTable[];
 
   @Input()
-  public tableData: { [key: string]: any }[];
+  public tableData: DataTable[];
 
   @Output()
   public rowClick: EventEmitter<any> = new EventEmitter<any>();
