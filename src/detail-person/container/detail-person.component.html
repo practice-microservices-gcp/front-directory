@@ -1,7 +1,7 @@
 <h1>This is the container for the details</h1>
 <ardi-frame [header]="data.name">
     <ardi-list-properties
-    [config]="config"
+    [config]="config$ | async"
     [data]="data"
     ></ardi-list-properties>
 </ardi-frame>
