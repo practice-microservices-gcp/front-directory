@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
 import { PeopleDataSourceService } from '../datasources'
-import { DataTable } from '../components';
+import { DataTable, DataListProperties } from '../components';
 
 
 @Injectable({
@@ -14,7 +14,7 @@ export class PeopleRepositoryService {
     private dataSource: PeopleDataSourceService
   ) {}
 
-  public getOnePerson(id: any): Observable<DataTable> {
+  public getOnePerson(id: any): Observable<DataListProperties> {
     return this.dataSource.getPerson(id);
   }
 
