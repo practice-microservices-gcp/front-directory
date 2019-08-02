@@ -1,0 +1,1 @@
+export { RouterState } from './custom-router-serializer';
