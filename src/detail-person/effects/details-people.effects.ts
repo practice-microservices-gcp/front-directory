@@ -9,9 +9,7 @@ import {
 } from '../actions';
 import { DataListProperties } from 'src/components';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class DetailsPeopleEffects {
 
   public loadDetailPeople$ = createEffect(

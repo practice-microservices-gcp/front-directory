@@ -11,9 +11,7 @@ import {
 } from '../actions';
 import { PeopleRepositoryService } from '../../repositories';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class ListPeopleEffects {
 
   public loadPagePeopl$ = createEffect(

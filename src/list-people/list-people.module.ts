@@ -9,6 +9,7 @@ import { ListPeopleComponent } from './container';
 import { ListPeopleEffects } from './effects';
 import { FEATURE_LIST_PEOPLE } from './selectors';
 
+
 @NgModule({
   declarations: [ TableComponent, ListPeopleComponent, LoadingComponent ],
   imports: [
