@@ -10,6 +10,8 @@ export class AuthUserComponent {
     public loading = false;
     public user = '';
     public password = '';
+    public errorType = 'warning';
+    public errorMsg = null
 
     public doLogin() {
         console.log('User: ', this.user);

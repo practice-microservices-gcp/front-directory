@@ -3,10 +3,10 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
 import { AuthUserComponent } from './container';
-import { LoadingComponent } from '../components';
+import { LoadingComponent, NoticeComponent } from '../components';
 
 @NgModule({
-    declarations: [ AuthUserComponent, LoadingComponent ],
+    declarations: [ AuthUserComponent, LoadingComponent, NoticeComponent ],
     imports: [ CommonModule, FormsModule ],
     exports: [ AuthUserComponent]
 })
