@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { NoticeType } from '../../components';
 
 @Component({
     selector: 'ardi-auth-user',
@@ -10,7 +11,7 @@ export class AuthUserComponent {
     public loading = false;
     public user = '';
     public password = '';
-    public errorType = 'warning';
+    public errorType: NoticeType = 'warning';
     public errorMsg = null
 
     public doLogin() {

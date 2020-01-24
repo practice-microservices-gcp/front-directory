@@ -1,6 +1,8 @@
 import { Component, Input } from '@angular/core';
 import { trigger, transition, style, animate} from '@angular/animations';
 
+import { NoticeType } from './notice-type.entity'
+
 @Component({
     selector: 'ardi-notice',
     templateUrl: './notice.component.html',
@@ -21,7 +23,7 @@ import { trigger, transition, style, animate} from '@angular/animations';
 export class NoticeComponent {
 
     @Input()
-    public set type (notice_type: 'error' | 'warning') {
+    public set type (notice_type: NoticeType) {
         if (notice_type === 'error') {
             this.isError = true;
             this.isWarning = false;
