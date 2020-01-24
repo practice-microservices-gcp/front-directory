@@ -11,9 +11,6 @@ import { ListPeopleModule } from '../../list-people';
     CommonModule,
     HomeRoutingModule,
     ListPeopleModule
-  ],
-  exports: [
-    ListPeopleModule
   ]
 })
 export class HomeModule {}

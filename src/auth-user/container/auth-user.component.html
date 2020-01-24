@@ -1,0 +1,14 @@
+<ardi-loading [show]="loading"></ardi-loading>
+<div class="login">
+    <h3 class="login-title">Write your credentials</h3>
+    <form class="login-form" (submit)="doLogin($event)">
+        <label for="input-text" class="form-label">User/ email</label>
+        <input type="text" name="input-text" id="input-text" class="form-input" [(ngModel)]="user"/>
+        <label for="input-password" class="form-label">Password</label>
+        <input type="password" name="input-password" id="input-passowrd" class="form-input" [(ngModel)]="password"/>
+        <div class="buttons">
+            <button type="submit" class="button main">Login</button>
+            <button type="button" class="button link" (click)="goNewUser($event)">New user</button>
+        </div>
+    </form>
+</div>
