@@ -7,6 +7,10 @@ import { Observable, of, throwError } from 'rxjs';
 export class UserRepositoryService {
 
     public doLogin(user: string, password: string): Observable<any> {
-        return of('OK')
+        return of('OK');
+    }
+
+    public createNewUser(user:string, password:string): Observable<any> {
+        return of('OK');
     }
 }

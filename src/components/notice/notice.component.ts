@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { trigger, transition, style, animate} from '@angular/animations';
 
 import { NoticeType } from './notice-type.entity'
@@ -48,11 +48,14 @@ export class NoticeComponent {
     @Input()
     public message = 'The operation has failed. Please contact with the administrator';
 
+    @Output()
+    public onClose: EventEmitter<any> = new EventEmitter<any>();
+
     public isError = false;
     public isWarning = false;
     public isNotification = true;
 
     public close() {
-        this.show = false;
+        this.onClose.emit();
     }
 }
