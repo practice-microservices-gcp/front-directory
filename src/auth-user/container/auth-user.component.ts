@@ -71,6 +71,6 @@ export class AuthUserComponent implements OnInit, OnDestroy {
     }
 
     public goNewUser(event) {
-        console.log(event);
+        this.router.navigateByUrl('/new-user');
     }
 }

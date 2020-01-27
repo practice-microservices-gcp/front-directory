@@ -1,0 +1,31 @@
+<ardi-notice
+[type]="noticeType"
+[show]="msg"
+[message]="msg"
+></ardi-notice>
+<ardi-loading [show]="loading"></ardi-loading>
+<div class="create-user">
+  <h2>Create your user:</h2>
+  <form class="create-user-form" [formGroup]="newUserForm" (ngSubmit)="onSubmit()">
+    <label for="input-email" class="form-label">Email</label>
+    <input
+      type="email"
+      name="input-email"
+      id="input-email"
+      class="form-input"
+      formControlName="email"
+    />
+    <label for="input-password" class="form-label">Password</label>
+    <input
+      type="password"
+      name="input-password"
+      id="input-password"
+      class="form-input"
+      formControlName="password"
+    />
+    <div class="buttons">
+      <button type="submit" class="button">Save</button>
+      <button type="reset" class="button">Reset</button>
+    </div>
+  </form>
+</div>

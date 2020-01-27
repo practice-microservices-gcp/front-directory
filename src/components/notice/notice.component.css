@@ -32,6 +32,10 @@
     background-color: var(--warning-color);
 }
 
+.notification {
+    background-color: var(--notification-color);
+}
+
 .title {
     font-size: var(--font-big-size);
     font-weight: var(--font-weight-important);

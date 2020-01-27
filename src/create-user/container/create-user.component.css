@@ -1,27 +1,24 @@
-.login {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    margin-top: 5%;
+.create-user {
     color: var(--font-color);
     background-color: var(--primary-color);
-    width: 500px;
+    margin-top: 5%;
+    width: 800px;
     margin-left: auto;
     margin-right: auto;
     padding-bottom: 20px;
-    border-radius: 4px;
-}
-
-.login-form {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: stretch;
+    align-items: center;
+    border-radius: 5px;
+
 }
 
-.login-title {
-    font-size: var(--font-big-size);
+.create-user-form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
 }
 
 .form-label {
@@ -33,13 +30,14 @@
     border-radius: 5px;
     margin-bottom: 10px;
     height: 30px;
-    font-size: var(--font-medium-size);
+    font-size: var(--font-medum-size);
 }
 
 .buttons {
+    margin-top: 30px;
+    width: 100%;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
 }
 
@@ -48,17 +46,5 @@
     margin-bottom: 5px;
     width: 200px;
     cursor: pointer;
-}
-
-.main {
-    background-color: var(--font-color);
-    color: var(--secundary-color);
     border-radius: 4px;
-}
-
-.link {
-    background-color: transparent;
-    border: 0px transparent solid;
-    color: darkblue;
-    text-decoration: underline;
 }

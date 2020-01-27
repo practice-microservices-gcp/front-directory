@@ -24,12 +24,21 @@ export class NoticeComponent {
 
     @Input()
     public set type (notice_type: NoticeType) {
-        if (notice_type === 'error') {
-            this.isError = true;
-            this.isWarning = false;
-        } else {
-            this.isWarning = true;
-            this.isError = false;
+        switch (notice_type) {
+            case 'error':
+                this.isError = true;
+                this.isWarning = false;
+                this.isNotification = false;
+            break;
+            case 'warning':
+                this.isError = false;
+                this.isWarning = true;
+                this.isNotification = true;
+            break;
+            default:
+                this.isError = false;
+                this.isWarning = false;
+                this.isNotification = true;
         }
     }
 
@@ -40,7 +49,8 @@ export class NoticeComponent {
     public message = 'The operation has failed. Please contact with the administrator';
 
     public isError = false;
-    public isWarning = true;
+    public isWarning = false;
+    public isNotification = true;
 
     public close() {
         this.show = false;

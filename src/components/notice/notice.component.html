@@ -1,18 +1,15 @@
 <div
 class="notice"
-[ngClass]="{'error': isError, 'warning': isWarning}"
+[ngClass]="{'error': isError, 'warning': isWarning, 'notification': isNotification}"
 *ngIf="show"
 [@openCloseNotice]>
     <button type="button" class="close" (click)="close()">
         <img src="assets/close-button.png" alt="close-button" class="close-button">
     </button>
     <div class="notices-content">
-        <ng-container *ngIf="isError; else elseTemplate">
-            <div class="title"> Error: </div>
-        </ng-container>
-        <ng-template #elseTemplate>
-            <div class="title"> Warning: </div>
-        </ng-template>
+        <div class="title" *ngIf="isError">Error: </div>
+        <div class="title" *ngIf="isWarning">Warning: </div>
+        <div class="title" *ngIf="isNotification">Note: </div>
         <div class="message">
             {{message}}
         </div>
