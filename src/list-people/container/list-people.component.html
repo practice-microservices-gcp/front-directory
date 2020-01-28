@@ -1,13 +1,13 @@
 <h1>List people container</h1>
 <div class="list-people">
   <ardi-table
-[config]="config$|async"
-[tableData]="tableData$|async"
-(rowClick)="onRowClicked($event)"
-(firstPage)="goFirstPage()"
-(prevPage)="goPreviousPage()"
-(sizeChange)="changeSize($event)"
-(nextPage)="goNextPage()"
-(lastPage)="goLastPage()"
-></ardi-table>
+    [config]="config$ | async"
+    [tableData]="tableData$ | async"
+    (rowClick)="onRowClicked($event)"
+    (firstPage)="goFirstPage()"
+    (prevPage)="goPreviousPage()"
+    (sizeChange)="changeSize($event)"
+    (nextPage)="goNextPage()"
+    (lastPage)="goLastPage()"
+  ></ardi-table>
 </div>
