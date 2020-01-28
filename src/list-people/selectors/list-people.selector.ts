@@ -17,6 +17,7 @@ const pageLimitFeature = (state: State) => ({
   lastPage: state[FEATURE_LIST_PEOPLE].lastPage
 });
 const loadingFeature = (state: State) => state[FEATURE_LIST_PEOPLE].loading;
+const errorFeature = (state: State) => state[FEATURE_LIST_PEOPLE].error
 
 
 export const configSelector = createSelector(
@@ -34,4 +35,9 @@ export const pageLimitSelector = createSelector(
 export const loadingSelector = createSelector(
   loadingFeature,
   (state: boolean) => state
+);
+
+export const errorSelector = createSelector(
+  errorFeature,
+  (state: Error) => state
 );
