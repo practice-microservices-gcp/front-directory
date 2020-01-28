@@ -2,9 +2,9 @@
 [type]="errorType"
 [show]="errorMsg"
 [message]="errorMsg"
-(onClose)="closeNotice(event)"
+(onClose)="closeNotice($event)"
 ></ardi-notice>
-<ardi-loading [show]="loading"></ardi-loading>
+<ardi-loading [show]="loading$ | async"></ardi-loading>
 <div class="login">
     <h3 class="login-title">Write your credentials</h3>
     <form class="login-form" (submit)="doLogin($event)">

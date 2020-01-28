@@ -49,7 +49,7 @@ export class AuthUserComponent implements OnInit, OnDestroy {
             .subscribe(
                 (login: boolean) => {
                     if (login) {
-                        this.router.navigateByUrl('/home');
+                        this.router.navigateByUrl('/priv/home');
                     }
                 }
             )

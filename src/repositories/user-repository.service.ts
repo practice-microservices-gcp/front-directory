@@ -13,4 +13,8 @@ export class UserRepositoryService {
     public createNewUser(user:string, password:string): Observable<any> {
         return of('OK');
     }
+
+    public isSessionActive(): Observable<boolean> {
+        return of(true);
+    }
 }
