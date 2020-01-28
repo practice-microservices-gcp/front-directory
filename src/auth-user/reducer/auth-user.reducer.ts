@@ -4,7 +4,7 @@ import * as authUserActions from '../actions';
 
 export interface AuthState {
     loading: boolean,
-    loginSuccess: false,
+    loginSuccess: boolean,
     error: Error
 }
 

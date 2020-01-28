@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
 
 import { PeopleDataSourceService } from '../datasources'
 import { DataTable, DataListProperties } from '../components';
@@ -20,5 +20,9 @@ export class PeopleRepositoryService {
 
   public getOnePagePeople(offset: number, limit: number): Observable<DataTable[]> {
     return this.dataSource.getPeople(offset, limit);
+  }
+
+  public saveOnePeople(name: string, surname: string, email: string): Observable<any> {
+    return of('OK')
   }
 }

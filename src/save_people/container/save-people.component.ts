@@ -1,5 +1,9 @@
 import { Component } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
+import { Store } from '@ngrx/store'
+
+import { State } from '../selectors'
+import { savePeopleRequest } from '../actions';
 
 @Component({
     selector: 'ardi-save-people',
@@ -14,7 +18,23 @@ export class SavePeopleComponent {
         email: new FormControl('')
     });
 
+    constructor(
+        private store: Store<State>
+    ) {}
+
     onSubmit() {
-        console.log(this.savePersonForm.value);
+        const {
+            name,
+            surname,
+            email
+        }  = this.savePersonForm.value;
+
+        const action = savePeopleRequest({
+            name: name,
+            surname: surname,
+            email: email
+        });
+
+        this.store.dispatch(action);
     }
 }
