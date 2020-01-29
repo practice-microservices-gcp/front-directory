@@ -6,7 +6,7 @@ import { switchMap, map, catchError } from 'rxjs/operators';
 import { of } from 'rxjs';
 
 @Injectable()
-export class NameService {
+export class SavePeopleEffects {
 
     public saveUser$ = createEffect(
         () => {

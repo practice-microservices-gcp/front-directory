@@ -5,6 +5,7 @@ import { HomeComponent } from './home.component';
 
 import { ListPeopleModule } from '../../list-people';
 import { SavePeopleModule } from '../../save_people';
+import { LoadingHomeModule } from '../../loading-home';
 
 @NgModule({
   declarations: [ HomeComponent ],
@@ -12,7 +13,8 @@ import { SavePeopleModule } from '../../save_people';
     CommonModule,
     HomeRoutingModule,
     ListPeopleModule,
-    SavePeopleModule
+    SavePeopleModule,
+    LoadingHomeModule
   ]
 })
 export class HomeModule {}
