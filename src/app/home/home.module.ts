@@ -7,6 +7,7 @@ import { ListPeopleModule } from '../../list-people';
 import { SavePeopleModule } from '../../save_people';
 import { LoadingHomeModule } from '../../loading-home';
 import { HomeNotificationModule } from '../../home-notifications';
+import { LogoutModule } from '../../logout';
 
 @NgModule({
   declarations: [ HomeComponent ],
@@ -16,7 +17,8 @@ import { HomeNotificationModule } from '../../home-notifications';
     ListPeopleModule,
     SavePeopleModule,
     LoadingHomeModule,
-    HomeNotificationModule
+    HomeNotificationModule,
+    LogoutModule
   ]
 })
 export class HomeModule {}

@@ -6,13 +6,15 @@ import { ListPropertiesComponent } from './list-properties';
 import { LoadingComponent } from './loading';
 import { NoticeComponent } from './notice';
 import { TableComponent } from './table';
+import { NavBarComponent } from './nav-bar';
 
 const components = [
     FrameComponent,
     ListPropertiesComponent,
     LoadingComponent,
     NoticeComponent,
-    TableComponent
+    TableComponent,
+    NavBarComponent
 ]
 
 @NgModule({

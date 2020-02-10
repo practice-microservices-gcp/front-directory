@@ -3,7 +3,7 @@ import { Store, select } from '@ngrx/store';
 import { Subscription } from 'rxjs';
 
 import { NoticeType } from '../../components';
-import { errorListPeopleSelector, errorSavePeopleSelector, successSavePeopleSelector, State} from '../selectors';
+import { errorListPeopleSelector, errorSavePeopleSelector, successSavePeopleSelector, State, errorLogoutSelector} from '../selectors';
 
 @Component({
     selector: 'ardi-home-notification',
@@ -60,6 +60,19 @@ export class HomeNotificationComponent implements OnInit, OnDestroy {
                 }
             )
         );
+
+        this.subscriptions.push(
+            this.store
+            .pipe(select(errorLogoutSelector))
+            .subscribe(
+                (err: Error) => {
+                    if (err) {
+                        this.noticeType = 'error';
+                        this.message = err.message;
+                    }
+                }
+            )
+        )
     }
 
     ngOnDestroy() {

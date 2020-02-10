@@ -1,0 +1,47 @@
+<nav class="nav-bar">
+    <span class="left poss" [ngClass]="{'one': isLeftOne}">
+        <button
+        type="button"
+        class="nav-bar-button"
+        *ngFor="let item of configNav.leftPossition"
+        (click)="clickOnOption(item.event)"
+        >
+            <ng-container *ngIf="item.icon; else elseTemplate">
+                <img src="{{item.icon}}" alt="logout" class="nav-bar-image"/>
+            </ng-container>
+            <ng-template #elseTemplate>
+                {{item.text}}
+            </ng-template>
+        </button>
+    </span>
+    <span class="center poss" [ngClass]="{'one': isCenterOne}">
+        <button
+        type="button"
+        class="nav-bar-button"
+        *ngFor="let item of configNav.centerPossition"
+        (click)="clickOnOption(item.event)"
+        >
+            <ng-container *ngIf="item.icon; else elseTemplate">
+                <img src="{{item.icon}}" alt="logout" class="nav-bar-image"/>
+            </ng-container>
+            <ng-template #elseTemplate>
+                {{item.text}}
+            </ng-template>
+        </button>
+    </span>
+    <span class="right poss" [ngClass]="{'one': isRightOne}">
+        <button
+        type="button"
+        class="nav-bar-button"
+        *ngFor="let item of configNav.rigthPossition"
+        (click)="clickOnOption(item.event)"
+        >
+            <ng-container *ngIf="item.icon; else elseTemplate">
+                <img src="{{item.icon}}" alt="logout" class="nav-bar-image"/>
+            </ng-container>
+            <ng-template #elseTemplate>
+                {{item.text}}
+            </ng-template>
+        </button>
+    </span>
+</nav>

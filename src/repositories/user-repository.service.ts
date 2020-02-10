@@ -17,4 +17,8 @@ export class UserRepositoryService {
     public isSessionActive(): Observable<boolean> {
         return of(true);
     }
+
+    public logout(): Observable<boolean> {
+        return of(true)
+    }
 }

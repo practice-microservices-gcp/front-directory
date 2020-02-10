@@ -1,7 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Store, select } from '@ngrx/store';
 import { Subscription } from 'rxjs';
-import { loadingListPeopleSelector, loadingSavePeopleSelector,State } from '../selectors';
+import { loadingListPeopleSelector, loadingSavePeopleSelector,State, loadingLogoutSelector } from '../selectors';
 
 
 @Component({
@@ -12,11 +12,12 @@ import { loadingListPeopleSelector, loadingSavePeopleSelector,State } from '../s
 export class LoadingHomeComponent implements OnInit, OnDestroy{
 
     public get showLoading() {
-        return this.loadingListPeople || this.loadingSavePeople;
+        return this.loadingListPeople || this.loadingSavePeople || this.loadingLogout;
     }
 
     private loadingListPeople: boolean = false;
     private loadingSavePeople: boolean = false;
+    private loadingLogout: boolean = false;
 
     
 
@@ -46,6 +47,16 @@ export class LoadingHomeComponent implements OnInit, OnDestroy{
                 }
             )
         );
+
+        this.subscriptions.push(
+            this.store
+            .pipe(select(loadingLogoutSelector))
+            .subscribe(
+                (value: boolean) => {
+                    this.loadingLogout = value;
+                }
+            )
+        )
     }
 
     ngOnDestroy() {
