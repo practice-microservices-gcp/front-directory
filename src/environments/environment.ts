@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiHost: 'https://europe-west1-invertible-env-265310.cloudfunctions.net'
+  apiHost: 'https://api-people-pmdnl3uh7a-ew.a.run.app'
 };
 
 /*

@@ -26,7 +26,7 @@ export class PeopleRepositoryService {
       limit: `${limit}`
     };
 
-    const url = 'read_people';
+    const url = 'people';
     return this.apiDataSource.getRequest(url, params)
     .pipe(
       map((response: any)=>{
