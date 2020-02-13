@@ -15,6 +15,7 @@ export class ApiPeopleDataSource {
         let uri = `${environment.apiHost}/${url}`;
 
         if (params) {
+            params['key'] = environment.apiKey;
             const keyQueryParams = Object.keys(params);
             const leng = keyQueryParams.length;
             uri += '?';

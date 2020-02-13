@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  apiHost: 'https://api-people-pmdnl3uh7a-ew.a.run.app'
+  apiHost: 'https://api-people-pmdnl3uh7a-ew.a.run.app',
+  apiKey: 'AIzaSyAqPJhn4Rnxz2EQo8jb8opStL84DD1_bOY'
 };
 
 /*
