@@ -17,12 +17,12 @@ export class ApiPeopleDataSource {
         if (params) {
             const keyQueryParams = Object.keys(params);
             const leng = keyQueryParams.length;
-            uri += `${uri}?`;
+            uri += '?';
 
             for (let i = 0; i < leng; i++) {
-                uri += `${uri}${keyQueryParams[i]}=${params[keyQueryParams[i]]}`
+                uri += `${keyQueryParams[i]}=${params[keyQueryParams[i]]}`
                 if (i < (leng - 1)) {
-                    uri += `${uri}&`
+                    uri += '&'
                 }
             }
         }
