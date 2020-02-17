@@ -1,10 +1,16 @@
 import { Injectable } from '@angular/core';
-import { Observable, of, throwError } from 'rxjs';
+import { AngularFireAuth } from '@angular/fire/auth';
+
+import { Observable, of, from } from 'rxjs';
+import { map } from 'rxjs/operators';
+
 
 @Injectable({
     providedIn: 'root'
 })
 export class UserRepositoryService {
+
+    constructor(private auth: AngularFireAuth) {}
 
     public doLogin(user: string, password: string): Observable<any> {
         return of('OK');
@@ -15,7 +21,10 @@ export class UserRepositoryService {
     }
 
     public isSessionActive(): Observable<boolean> {
-        return of(true);
+        return from(this.auth.currentUser)
+        .pipe(
+            map((user: firebase.User) => !!user)
+        )
     }
 
     public logout(): Observable<boolean> {

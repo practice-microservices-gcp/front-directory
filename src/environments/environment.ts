@@ -5,7 +5,15 @@
 export const environment = {
   production: false,
   apiHost: 'https://api-people-pmdnl3uh7a-ew.a.run.app',
-  apiKey: '<api-key>'
+  apiKey: '<api-key>',
+  firebase: {
+    apiKey: '<your-key>',
+    authDomain: '<your-project-authdomain>',
+    databaseURL: '<your-database-URL>',
+    projectId: '<your-project-id>',
+    storageBucket: '<your-storage-bucket>',
+    messagingSenderId: '<your-messaging-sender-id>'
+  }
 };
 
 /*

@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "invertible-env-265310": {
+      "hosting": {
+        "architecture-example": [
+          "invertible-env-265310"
+        ]
+      }
+    }
+  }
+}

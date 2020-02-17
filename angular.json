@@ -113,8 +113,13 @@
               "devServerTarget": "architecture-example:serve:production"
             }
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {}
         }
       }
-    }},
+    }
+  },
   "defaultProject": "architecture-example"
 }

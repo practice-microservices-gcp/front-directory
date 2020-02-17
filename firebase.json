@@ -1,0 +1,19 @@
+{
+  "hosting": [
+    {
+      "target": "architecture-example",
+      "public": "dist/architecture-example",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ]
+    }
+  ]
+}
