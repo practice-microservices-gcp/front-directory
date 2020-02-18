@@ -25,11 +25,16 @@ function onLogoutError(state: LogoutState, action: logoutActions.LogoutErrorActi
     return Object.assign({...state}, { loading: false, error: action.error, logoutSuccess: false});
 }
 
+function onLogoutReset(state: LogoutState, action: Action) {
+    return Object.assign({...state}, {loading: false, error: null, logoutSuccess: false});
+}
+
 const logoutReducer = createReducer(
     initialState,
     on(logoutActions.logoutRequest, onLogoutRequest),
     on(logoutActions.logoutError, onLogoutError),
-    on(logoutActions.logoutSuccess, onLogoutSuccess)
+    on(logoutActions.logoutSuccess, onLogoutSuccess),
+    on(logoutActions.logoutReset, onLogoutReset)
 )
 
 export function reducer (state: LogoutState | undefined, action: Action) {

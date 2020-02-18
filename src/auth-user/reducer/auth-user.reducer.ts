@@ -4,22 +4,22 @@ import * as authUserActions from '../actions';
 
 export interface AuthState {
     loading: boolean,
-    loginSuccess: boolean,
-    error: Error
+    error: Error,
+    allowNavigation: boolean
 }
 
 export const initialState: AuthState = {
     loading: false,
     error: null,
-    loginSuccess: false
+    allowNavigation: false
 }
 
 function onLoginRequest (state: AuthState, action: authUserActions.LoginRequestAction) {
-    return Object.assign({...state}, { loading: true, error: null, logginSucces: false });
+    return Object.assign({...state}, { loading: true, error: null, allowNavigation: false });
 }
 
 function onLoginSuccess (state: AuthState, action: Action) {
-    return Object.assign({...state}, { loading: false, loginSuccess: true });
+    return Object.assign({...state}, { loading: false, error: null, allowNavigation: true });
 }
 
 function onLoginError (state: AuthState, action: authUserActions.LoginErrorAction) {
@@ -27,14 +27,19 @@ function onLoginError (state: AuthState, action: authUserActions.LoginErrorActio
         errorType: action.errorType,
         errorMsg: action.errorMsg
     }
-    return Object.assign({...state}, {loading: false, error: error, logginSucces: false})
+    return Object.assign({...state}, {loading: false, error: error, allowNavigation: false})
+}
+
+function onForbidenNavigation (state: AuthState, action: Action) {
+    return Object.assign({...state}, { allowNavigation: false });
 }
 
 const authUserReducer = createReducer(
     initialState,
     on(authUserActions.loginRequest, onLoginRequest),
     on(authUserActions.loginSuccess, onLoginSuccess),
-    on(authUserActions.loginError, onLoginError)
+    on(authUserActions.loginError, onLoginError),
+    on(authUserActions.loginForbidenNavigation, onForbidenNavigation)
 )
 
 export function reducer (state: AuthState | undefined, action: Action) {

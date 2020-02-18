@@ -10,20 +10,20 @@ export interface State {
 }
 
 const loadingFeature = (state: State) => state[FEATURE_AUTH_USER].loading;
-const loginSuccessFeature = (state: State) => state[FEATURE_AUTH_USER].loginSuccess;
 const errorFeature = (state: State) => state[FEATURE_AUTH_USER].error;
+const allowNavigationFeature = (state: State) => state[FEATURE_AUTH_USER].allowNavigation;
 
 export const loadingSelector = createSelector(
     loadingFeature,
     (state: boolean) => state
 )
 
-export const loginSuccessSelector = createSelector(
-    loginSuccessFeature,
-    (state: boolean) => state
-)
-
 export const errorSelector = createSelector(
     errorFeature,
     (state: Error) => state
+)
+
+export const allowNavigationSelector = createSelector(
+    allowNavigationFeature,
+    (state: boolean) => state
 )

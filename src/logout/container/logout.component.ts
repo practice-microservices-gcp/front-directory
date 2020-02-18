@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 
 import { NavBarConfig } from 'src/components';
 import { State, logoutSuccessSelector } from '../selectors';
-import { logoutRequest } from '../actions';
+import { logoutRequest, logoutReset } from '../actions';
 import { Subscription } from 'rxjs';
 
 @Component({
@@ -41,6 +41,8 @@ export class LogoutComponent implements OnInit, OnDestroy {
             .subscribe(
                 (value: boolean) => {
                     if (value) {
+                        const action = logoutReset();
+                        this.store.dispatch(action);
                         this.router.navigateByUrl('/login');
                     }
                 }
