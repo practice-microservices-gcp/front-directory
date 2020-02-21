@@ -41,6 +41,6 @@ export class PeopleRepositoryService {
   }
 
   public saveOnePeople(name: string, surname: string, email: string): Observable<any> {
-    return of('OK')
+    return this.apiDataSource.postRequest('people', {name, surname, email});
   }
 }

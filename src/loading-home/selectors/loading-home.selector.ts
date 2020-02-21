@@ -9,22 +9,13 @@ export interface State {
     [FEATURE_LOGOUT]: LogoutState
 }
 
-const loadingListPeopleFeature = (state: State) => state;
-const loadingSavePeopleFeature = (state: State) => state;
-const loadingLogoutFeature = (state: State) => state;
+const loadingFeature = (state: State) => state;
 
-export const loadingListPeopleSelector = createSelector(
-    loadingListPeopleFeature,
-    (state: State) => state[FEATURE_LIST_PEOPLE].loading
-);
 
-export const loadingSavePeopleSelector = createSelector(
-    loadingSavePeopleFeature,
-    (state: State) => state[FEATURE_SAVE_PEOPLE].loading
+export const loadingSelector = createSelector(
+    loadingFeature,
+    (state: State) =>
+    state[FEATURE_LIST_PEOPLE].loading ||
+    state[FEATURE_SAVE_PEOPLE].loading ||
+    state[FEATURE_LOGOUT].loading
 )
-
-export const loadingLogoutSelector = createSelector(
-    loadingLogoutFeature,
-    (state: State) => state[FEATURE_LOGOUT].loading
-)
-

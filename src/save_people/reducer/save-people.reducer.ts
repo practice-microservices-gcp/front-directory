@@ -26,11 +26,16 @@ function onSavePersonError (state: SavePeopleState, action: savePersonAction.Sav
     return Object.assign({...state}, { loading: false, error: action.error, saveSuccess: false});
 }
 
+function onSavePersonRestore (state: SavePeopleState, action: Action) {
+    return Object.assign({...state}, { loading: false, error: null, saveSuccess: false});
+}
+
 const savePeopleReducer = createReducer(
     initialState,
     on(savePersonAction.savePeopleRequest, onSavePersonRequest),
     on(savePersonAction.savePeopleSuccess, onSavePersonSuccess),
     on(savePersonAction.savePeopleError, onSavePersonError),
+    on(savePersonAction.savePeopleRestore, onSavePersonRestore)
 );
 
 export function reducer (state: SavePeopleState | undefined, action: Action) {
