@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-import { PeopleDataSourceService, ApiPeopleDataSource } from '../datasources';
+import { ApiPeopleDataSource } from '../datasources';
 import { DataTable, DataListProperties } from '../components';
 
 
@@ -12,12 +12,12 @@ import { DataTable, DataListProperties } from '../components';
 export class PeopleRepositoryService {
 
   constructor(
-    private dataSource: PeopleDataSourceService,
     private apiDataSource: ApiPeopleDataSource
   ) {}
 
   public getOnePerson(id: any): Observable<DataListProperties> {
-    return this.dataSource.getPerson(id);
+    const url = `people/${id}`
+    return this.apiDataSource.getRequest(url)
   }
 
   public getOnePagePeople(offset: number, limit: number): Observable<DataTable> {
